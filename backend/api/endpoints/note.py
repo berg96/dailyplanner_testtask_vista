@@ -30,7 +30,7 @@ async def create_new_note(
 async def get_all_notes(
     session: AsyncSession = Depends(get_async_session),
 ):
-    return await note_crud.get_multi(session)
+    return await note_crud.get_all_notes_sorted_by_date(session)
 
 
 @router.get(

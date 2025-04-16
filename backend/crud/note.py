@@ -1,3 +1,4 @@
+from sqlalchemy import select, asc
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.crud.base import CRUDBase
@@ -19,6 +20,14 @@ class CRUDNote(CRUDBase[
         await session.commit()
         await session.refresh(note)
         return note
+
+    async def get_all_notes_sorted_by_date(
+        self, session: AsyncSession
+    ) -> list[Note]:
+        result = await session.execute(
+            select(Note).order_by(asc(Note.note_date))
+        )
+        return result.scalars().all()
 
 
 note_crud = CRUDNote(Note)
