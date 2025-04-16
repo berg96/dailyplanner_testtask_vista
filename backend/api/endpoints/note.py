@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.api.validators import check_note_exists
-from backend.core.db import get_async_session
-from backend.crud.note import note_crud
-from backend.schemas.note import NoteRead, NoteCreate, NoteUpdate
+from api.validators import check_note_exists
+from core.db import get_async_session
+from crud.note import note_crud
+from schemas.note import NoteRead, NoteCreate, NoteUpdate
 
 router = APIRouter()
 

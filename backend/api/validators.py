@@ -1,8 +1,8 @@
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.crud.note import note_crud
-from backend.models.note import Note
+from crud.note import note_crud
+from models.note import Note
 
 
 async def check_note_exists(

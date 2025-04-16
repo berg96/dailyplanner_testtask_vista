@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import declarative_base, sessionmaker, declared_attr
 
-from backend.core.config import settings
+from core.config import settings
 
 
 class PreBase:

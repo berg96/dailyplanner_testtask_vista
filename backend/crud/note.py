@@ -1,9 +1,9 @@
 from sqlalchemy import select, asc
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.crud.base import CRUDBase
-from backend.models.note import Note
-from backend.schemas.note import NoteCreate, NoteUpdate
+from crud.base import CRUDBase
+from models.note import Note
+from schemas.note import NoteCreate, NoteUpdate
 
 
 class CRUDNote(CRUDBase[
